@@ -1,0 +1,228 @@
+/* ============================
+   RESET & BASE
+============================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg: #0d0d15;
+  --color-surface: #15151f;
+  --color-surface-2: #1c1c2a;
+  --color-neon: #00ffc2;
+  --color-neon-pink: #ff2e88;
+  --color-text: #e8e8f0;
+  --color-muted: #8a8a9c;
+  --radius: 16px;
+  --transition: 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* ============================
+   HEADER & NAVIGATION
+============================ */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(13, 13, 21, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 255, 194, 0.15);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.1rem 1.5rem;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-neon);
+  letter-spacing: -0.5px;
+  text-shadow: 0 0 12px rgba(0, 255, 194, 0.5);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color var(--transition), text-shadow var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--color-neon);
+  text-shadow: 0 0 8px rgba(0, 255, 194, 0.6);
+}
+
+/* ============================
+   HERO SECTION
+============================ */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(0, 255, 194, 0.12), transparent 45%),
+    radial-gradient(circle at 85% 75%, rgba(255, 46, 136, 0.12), transparent 45%),
+    var(--color-bg);
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4.2rem);
+  font-weight: 800;
+  color: var(--color-text);
+  text-shadow: 0 0 20px rgba(0, 255, 194, 0.35);
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: var(--color-muted);
+  max-width: 500px;
+  margin-bottom: 2rem;
+}
+
+.hero button {
+  padding: 0.9rem 2.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-bg);
+  background: var(--color-neon);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0, 255, 194, 0.4);
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+.hero button:hover {
+  transform: translateY(-3px);
+  background: var(--color-neon-pink);
+  box-shadow: 0 0 28px rgba(255, 46, 136, 0.5);
+}
+
+.hero button:active {
+  transform: translateY(0);
+}
+
+/* ============================
+   ABOUT SECTION
+============================ */
+.about {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+  position: relative;
+  display: inline-block;
+}
+
+.about h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 0.6rem auto 0;
+  background: linear-gradient(90deg, var(--color-neon), var(--color-neon-pink));
+  border-radius: 2px;
+}
+
+.about p {
+  color: var(--color-muted);
+  font-size: 1.05rem;
+}
+
+/* ============================
+   CONTACT SECTION
+============================ */
+.contact {
+  max-width: 600px;
+  margin: 0 auto 4rem;
+  padding: 2.5rem;
+  background: var(--color-surface);
+  border: 1px solid rgba(0, 255, 194, 0.15);
+  border-radius: var(--radius);
+  text-align: center;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.contact:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-neon);
+  box-shadow: 0 0 24px rgba(0, 255, 194, 0.2);
+}
+
+.contact h2 {
+  font-size: 1.4rem;
+  color: var(--color-text);
+  margin-bottom: 0.6rem;
+}
+
+.contact p {
+  color: var(--color-muted);
+}
+
+/* ============================
+   FOOTER
+============================ */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(0, 255, 194, 0.1);
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .nav-links {
+    gap: 1.2rem;
+  }
+
+  .hero {
+    min-height: 80vh;
+  }
+}
